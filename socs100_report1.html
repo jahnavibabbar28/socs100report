@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>socs100_report1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="socs100_report1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="socs100_report1_files/libs/quarto-html/quarto.js"></script>
+<script src="socs100_report1_files/libs/quarto-html/popper.min.js"></script>
+<script src="socs100_report1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="socs100_report1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="socs100_report1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="socs100_report1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="socs100_report1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="socs100_report1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="socs100_report1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">socs100_report1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="covid-19-data-analysis" class="level1">
+<h1>COVID-19 Data Analysis</h1>
+<section id="investigating-covid-19-case-and-case-fatality-rate-cfr-variations-across-economies" class="level2">
+<h2 class="anchored" data-anchor-id="investigating-covid-19-case-and-case-fatality-rate-cfr-variations-across-economies">Investigating COVID-19 Case and Case Fatality Rate (CFR) Variations across Economies</h2>
+<p>Report Word Count: 1508</p>
+<section id="assessment-part-1a-data-exploration-and-contextualization" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-part-1a-data-exploration-and-contextualization">Assessment Part 1A: Data Exploration and Contextualization</h3>
+<p>This report aims to examine the variation in COVID-19 cases and case fatality rates (CFRs) across low-income countries (LICs), lower-middle-income countries (lower-MICs), upper-middle-income countries (upper-MICs) and high-income economies (HICs) (World Bank, 2023). It aims to drive data-driven research on the underlying socioeconomic factors in these regions influencing the varying health outcomes in different regions.</p>
+<p>The chosen dataset for this analysis is from the <a href="https://github.com/owid/covid-19-data/blob/master/public/data/cases_deaths/full_data.csv">COVID-19 Cases and Deaths Database</a> provided by the Our World in Data (OWID, 2024). CFR is the number of confirmed deaths divided by the number of confirmed cases. The chosen dataset provides key information on confirmed cases and deaths across various countries and income groups – making it valuable for data-driven policy-making.</p>
+<p><strong>Dataset Structure and Relevance</strong></p>
+<p>The chosen dataset comprehensively tracks the spread of COVID-19 over time, reporting cases and deaths in the form of a long-structured dataframe. The dataset groups data for LICs, lower-MICs, upper-MICs and HICs. This is particularly interesting as it allows for key comparisons to be made across economic groups and provide insights into how severely COVID-19 affected areas with varying socio-economic statuses.</p>
+<p>The database is particularly relevant to this analysis. Firstly, the grouping of economies by income level allows for data-driven analysis between economic status and health resilience. Secondly, the extensive data provided by the database on total number of cases and deaths over time, with no missing values, allows for a deeper analysis of CFRs over time. Additionally, Our World in Data collects data from official sources, which have been cited as well, making this dataset informative and reliable.</p>
+<p>For a social science analysis, this dataset can help explore how structural factors such as economic resources and healthcare infrastructure, contribute to a country’s health resilience. This report aims to analyze and compare CFRs across these economies to gain a better understanding of the impact of socio-economic factors affecting the damage from COVID-19.</p>
+<p><strong>Variables</strong></p>
+<p>The variables from the full dataset are described below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><u>Variable</u></th>
+<th><u>Description</u></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Date</td>
+<td>Indicates the specific date for which case/death counts are recorded for a location, with each entry in the YYYY-MM-DD format.</td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td>Categorical variable which indicates country, region or the income level of the economies for which the data is reported.</td>
+</tr>
+<tr class="odd">
+<td>Total Cases</td>
+<td>Numerical variable which indicates the cumulative count of of confirmed COVID-19 cases reported.</td>
+</tr>
+<tr class="even">
+<td>New Cases</td>
+<td>Numerical variable which indicates the number of new confirmed cases of COVID-19 on that date.</td>
+</tr>
+<tr class="odd">
+<td>Total Deaths</td>
+<td>Numerical variable which indicates the cumulative count of deaths reported from COVID-19.</td>
+</tr>
+<tr class="even">
+<td>New Deaths</td>
+<td>Numerical variable which indicates the number of new deaths reported from COVID-19 on that date.</td>
+</tr>
+<tr class="odd">
+<td>Bi-Weekly Cases</td>
+<td>Numerical variable which indicates the number of cases reported from COVID-19 in a set time period of two weeks.</td>
+</tr>
+<tr class="even">
+<td>Bi-Weekly Deaths</td>
+<td>Numerical variable which indicates the number of deaths reported from COVID-19 in a set time period of two weeks.</td>
+</tr>
+<tr class="odd">
+<td>Weekly Cases</td>
+<td>Numerical variable which indicates the number of cases reported from COVID-19 in a particular week.</td>
+</tr>
+<tr class="even">
+<td>Weekly Deaths</td>
+<td>Numerical variable which indicates the number of deaths reported from COVID-19 in a particular week.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: All Variables from COVID-19 Dataset from OWID Database</p>
+<p><em>Note: New variables were created for this analysis using the above pre-existing variables from the dataset. These will be discussed in Part 2A.</em></p>
+<p><strong>Dataset Overview</strong></p>
+<p>An overview of the variables is important to gain a clearer understanding of the dataset.</p>
+<p>To obtain a table presenting the Mean, Standard Deviation and Number of Missing Values for each variable in the dataset, a function <em>variable_overview</em> can be created. This is done below using <em>if</em> and <em>else</em>. Then, <em>map_dfr</em> can be used to automate applying the function to all variables and avoid repetition. <em>map_dfr</em> is simply another type of <em>map</em> function which binds the rows into a single dataframe, which will allow to apply <em>kable</em> from <em>kableExtra</em> to present an overview of the dataset in a clearer format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a function to create an overview table with mean, sd and number of NAs</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>variable_overview <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.numeric</span>(x)) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">Mean =</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">SD =</span> <span class="fu">sd</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">MissingValues =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">Mean =</span> <span class="cn">NA</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">SD =</span> <span class="cn">NA</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">MissingValues =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># use map_dfr to automate variable_overview for all variables</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>overview <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(full_data, variable_overview, <span class="at">.id =</span> <span class="st">"Variable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Dataset Overview</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">MissingValues</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">date</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">location</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">new_cases</td>
+<td style="text-align: right;">8.017360e+03</td>
+<td style="text-align: right;">229664.867</td>
+<td style="text-align: right;">1645</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">new_deaths</td>
+<td style="text-align: right;">7.185214e+01</td>
+<td style="text-align: right;">1368.323</td>
+<td style="text-align: right;">1196</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">total_cases</td>
+<td style="text-align: right;">7.365292e+06</td>
+<td style="text-align: right;">44775816.767</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">total_deaths</td>
+<td style="text-align: right;">8.125957e+04</td>
+<td style="text-align: right;">441190.138</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">weekly_cases</td>
+<td style="text-align: right;">5.628718e+04</td>
+<td style="text-align: right;">606312.779</td>
+<td style="text-align: right;">2875</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">weekly_deaths</td>
+<td style="text-align: right;">5.044260e+02</td>
+<td style="text-align: right;">3595.456</td>
+<td style="text-align: right;">2426</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">biweekly_cases</td>
+<td style="text-align: right;">1.130443e+05</td>
+<td style="text-align: right;">1167969.709</td>
+<td style="text-align: right;">4597</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">biweekly_deaths</td>
+<td style="text-align: right;">1.013047e+03</td>
+<td style="text-align: right;">7162.040</td>
+<td style="text-align: right;">4148</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Table 2: Dataset Overview</p>
+<p>It can be noted that the variables <em>total_cases</em>, <em>total_deaths</em>, <em>date</em>, and <em>location</em> have 0 missing values. This data analysis analyses variations in COVID-19 cases and CFRs, which concerns total cases and total deaths. Thus, there are no missing values to be dealt with for the relevant variables. Moreover, the mean and SD values for total cases and total deaths are not informative figures as these variables show cumulative numbers.</p>
+<p>For other variables, such as new cases, it is interesting to note that the average number of new cases everyday across all locations is over 200,000. However, upon further inspection, it is noted that the locations included in the dataset are not just individual countries, but also continents, income group classifications, and world data. This suggests that the mean and SD values are very likely skewed as the data is not filtered.</p>
+</section>
+<section id="assessment-part-1b-data-processing-and-functional-programming" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-part-1b-data-processing-and-functional-programming">Assessment Part 1B: Data Processing and Functional Programming</h3>
+<p>To prepare the data for analysis, various steps were taken to tidy and process the data.</p>
+<p><strong>CFR Function</strong></p>
+<p>Firstly, to simplify the process of calculating CFR, a function can be created to automate this process for multiple locations and return a percentage from 2 numeric inputs, and also handle any possible scenarios where the denominator is 0.</p>
+<p>This avoids repetition and any potential errors from division or repetition, thereby making it a useful and reusable function for automation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a function which can automate calculating rate or percentage from 2 inputs</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rate <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">if_else</span>(y <span class="sc">==</span> <span class="dv">0</span>, <span class="cn">NA</span>, (x <span class="sc">/</span> y) <span class="sc">*</span> <span class="dv">100</span>) </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Filtering Data</strong></p>
+<p>Filtering the dataset included selecting the relevant variables and ensuring data entries were all after the first COVID-19 case was reported. This will reduce the dataset to only relevant data and improve clarity.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select relevant variables and filter the data </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>full_data <span class="ot">&lt;-</span> full_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(date, location, total_cases, total_deaths) <span class="sc">%&gt;%</span> <span class="co"># select relevant variables</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total_cases<span class="sc">&gt;</span><span class="dv">0</span>) <span class="co"># filter dataset to only include when first case of COVID-19 was recorded</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Renaming and Filtering <em>Location</em></strong></p>
+<p>The <em>location</em> variable was filtered to only include data from LICs, lower-MICs, upper-MICs and HICs. This will ensure the data is clear and relevant. It aims to adapt the <em>location</em> variable into the following variable:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><u>Variable</u></th>
+<th><u>Description</u></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Income Group Classification</td>
+<td>Categorical variable which indicates the income level of the economies for which the data is reported. This includes LICs, lower-MICs, upper-MICs and HICs.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3: Income Group Classification as a Variable</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename and filter data by four income level classifications</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>full_data <span class="ot">&lt;-</span> full_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">countryincomelevel =</span> location) <span class="sc">%&gt;%</span> <span class="co"># rename location to countryincomelevel</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(countryincomelevel <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"High-income countries"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Upper-middle-income countries"</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Lower-middle-income countries"</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Low-income countries"</span>)) <span class="co"># filter to include only relevant income levels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Creating CFR</strong></p>
+<p><em>CFR</em> can be created for analysis of fatality rates over time. R does not have any percentage function, so, the <em>rate</em> function can be used to create this new variable and avoid any potential errors from division or repetition. The new variable <em>cfr</em> is:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 91%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><u>Variable</u></th>
+<th><u>Description</u></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CFR</td>
+<td>Numerical variable between 0-100 indicating the total number of confirmed deaths from COVID-19 as a percentage of the total number of confirmed cases of COVID-19 up until a certain date.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4: CFR as a Variable</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create new variables using the custom rate function</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>full_data <span class="ot">&lt;-</span> full_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cfr =</span> <span class="fu">rate</span>(total_deaths, total_cases), <span class="co">#calculate cfr</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These data tidying and wrangling tasks will ensure smooth data analysis and comparison.</p>
+</section>
+<section id="assessment-part-2a-data-visualization-and-functional-programming" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-part-2a-data-visualization-and-functional-programming">Assessment Part 2A: Data Visualization and Functional Programming</h3>
+<p>This section aims to create relevant data visualizations employing functional programming to gain further insight into COVID-19 cases and CFRs across LICs, lower-MICs, upper-MICs and HICs.</p>
+<p><strong>Defining Regions for Analysis</strong></p>
+<p>Firstly, we can filter out the four income group classifications by creating a new object, <em>locations</em>. By focusing on the total cases and CFRs in these regions, we can better observe variations across different economic contexts.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter out location by groups of countries by economic status</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"High-income countries"</span>, <span class="st">"Upper-middle-income countries"</span>, <span class="st">"Lower-middle-income countries"</span>, <span class="st">"Low-income countries"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Function for Automating Visualizing Total COVID-19 Cases over Time</strong></p>
+<p>To plot and compare the total cases over time in the four groups, a function, <em>plot_cases</em>, can be created. This function will allow the reproduction of the” Total COVID-19 Cases over Time” plot for various groups. More importantly, creating a function and application using <em>map</em> will automate this process, and avoid repetition and any potential errors from it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a function to plot total cases over time for different countries grouped by economic status</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plot_cases <span class="ot">&lt;-</span> <span class="cf">function</span>(location_name) {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  full_data <span class="sc">%&gt;%</span> <span class="co"># set data to full_data</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(countryincomelevel <span class="sc">==</span> location_name) <span class="sc">%&gt;%</span> <span class="co"># filter to plot for the four income group classifications</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> total_cases)) <span class="sc">+</span> <span class="co"># set x and y variables and create plots</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># customize plots</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="st">"Total COVID-19 Cases"</span>, <span class="at">title =</span> <span class="fu">glue</span>(<span class="st">"COVID-19 Cases in "</span>, location_name)) <span class="sc">+</span> <span class="co"># set names for plots using the glue function</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500000000</span>)) <span class="sc">+</span> <span class="co"># set scale for y-axis</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># set font family times new roman</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize title </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize axis title</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize axis text</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>() <span class="co"># remove x axis text (as this is simply a list of dates, which will make the plots messy)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Functions for Automating Visualizing COVID-19 CFRs over Time</strong></p>
+<p>Similarly, we can create a function, <em>plot_cfr</em>, for plotting CFRs over time.</p>
+<p><strong>Automating the Visualization of Total Cases and CFRs over Time</strong></p>
+<p>Using <em>plot_cases</em> and <em>plot_cfr</em>, 2 key visualizations can be created for all groups. As opposed to manually applying these functions to each group and plot, we can employ <em>map</em> to automate it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use map function to create plots for total cases over time for different locations</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plots1 <span class="ot">&lt;-</span> <span class="fu">map</span>(locations, plot_cases)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Variation in Total COVID-19 Cases across Economies</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="socs100_report1_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 1: COVID-19 Cases in LICs, lower-MICs, upper-MICs and HICs over Time</p>
+<p>For HICs, total cases show a rapid increase, plateauing at around 400 million cases. This indicates that initially, the disease spread rapidly and was eventually controlled, likely due to intervention.</p>
+<p>Upper-MICs saw a very similar trend, however, the increase is steeper, implying a sudden outbreak, plateauing at 250 million cases, which is lower than HICs. Total cases in lower-MICs increased at a stable rate, stabilizing at around 100 million cases. These are likely due to under-reporting and under-testing.</p>
+<p>Interestingly, for LICs, total cases are substantially lower than others - 2,000,000 cases. This is very likely due to a lack of infrastructure for reporting and testing. However, it can be argued that LICs are less likely to have extensive globalisation, thereby, leading to genuinely fewer cases.</p>
+<p><strong>Variations in COVID-19 CFRs across Economies</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 28 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 7 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="socs100_report1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure 2: CFRs in LICs, lower-MICs, upper-MICs and HICs over Time</p>
+<p>For upper-MICs, the initial CFR is lower than that in high-income countries, at slightly over 5%, but the trend follows a similar one to HICs, settling at around 1.5%. This suggests that there were improvements in healthcare responses. However, under-reporting likely led to lower detection of cases.</p>
+<p>Similarly, CFRs for lower-MICs observe a decreasing pattern. However, the CFR settles at around 2%, higher than HICs and upper-MICs, suggesting a lower level of health resilience.</p>
+<p>In LICs, although initially, the CFR was relatively high, reaching almost 10%, the CFR settled at 2.5%, higher than all groups, reflecting the lack of resources to manage the impact of the pandemic.</p>
+<p>Interestingly, when plotting the CFRs, 14 data entries are values above 100. However, theoretically, CFR should be between 0 and 100. This is an interesting phenomenon to observe. It is likely that the patients were not tested but deaths were reported – thus, leading to a higher number of deaths than cases.</p>
+<p><strong>Implications of Trends in COVID-19 Case and CFR Variations</strong></p>
+<p>Despite limitations, this analysis provides insight into the correlation between economic status and pandemic outcomes. HICs showing lower CFRs and faster response might indicate better healthcare infrastructure and resources. Data-driven policy-making can target aid and health interventions to LICs and MICs, which tend to experience higher CFRs due to limited resources.</p>
+</section>
+<section id="assessment-part-2c-critical-engagement-with-genai-tools" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-part-2c-critical-engagement-with-genai-tools">Assessment Part 2C: Critical Engagement with GenAI Tools</h3>
+<p>A key opportunity where I had the chance to employ Generative AI tools was during the visualization processes. While creating a function to plot the variation in cases/CFRs over time, I noticed the axis text on the x-axis was a list of dates, making the plots very messy and harder to interpret. I learnt from ChatGPT to manage this problem using <em>element_blank()</em> which removed the unnecessary text. As it allowed for a clearer representation, this was added to <em>plot_cases</em>, (seen below), and was used in the analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_cases <span class="ot">&lt;-</span> <span class="cf">function</span>(location_name) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  full_data <span class="sc">%&gt;%</span> <span class="co"># set data to full_data</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(countryincomelevel <span class="sc">==</span> location_name) <span class="sc">%&gt;%</span> <span class="co"># filter to plot for the four income group classifications</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> total_cases)) <span class="sc">+</span> <span class="co"># set x and y variables and create plots</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># customize plots</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="st">"Total COVID-19 Cases"</span>, <span class="at">title =</span> <span class="fu">glue</span>(<span class="st">"COVID-19 Cases in "</span>, location_name)) <span class="sc">+</span> <span class="co"># set names for plots using the glue function</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500000000</span>)) <span class="sc">+</span> <span class="co"># set scale for y-axis</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># set font family times new roman</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize title </span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize axis title</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"times new roman"</span>), <span class="co"># customize axis text</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>() <span class="co"># remove x axis text (as this is simply a list of dates, which will make the plots messy)</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Additionally, while writing this project on Quarto, I found GenAI tools helpful in proofreading text and identifying any small errors. As Quarto does not have any built-in editor, for example like that in Microsoft Word, GenAI was a useful proof-reading tool.</p>
+<p>However, there are instances where ChatGPT was unable to provide insightful contributions. For instance, when dealing with NAs for <em>total_cases</em>, ChatGPT suggested to simply input the mean value. However, <em>total_cases</em> is a cumulative sum, implying that the mean value does not hold much relevance. This is something that GenAI tools cannot help us with as they do not know the context of the data. Despite this, I found GenAI tools a helpful collaborative tool in refining this data analysis project.</p>
+</section>
+<section id="report-conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="report-conclusions">Report Conclusions</h3>
+<p>This report explored the variations in COVID-19 cases and CFRs across LICs, MICs and HICs.</p>
+<p>The findings outlined the variations in healthcare outcomes through CFRs between different economic groups and the importance of targeted intervention in driving health resilience. Data-driven analysis will remain key in understanding COVID-19’s impact across different socio-economic contexts and driving change.</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
